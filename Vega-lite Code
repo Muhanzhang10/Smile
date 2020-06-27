@@ -11,3 +11,49 @@
   }
 }
 
+# What is the relationship between tweets_count, followers_count, and friends_count?
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "tweets, followers, friends",
+  "data": {"url": "https://raw.githubusercontent.com/Muhanzhang10/Smile/master/allCrimson.json"},
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "tweets_count", "type": "quantitative"},
+    "y": {"field": "followers_count", "type": "quantitative"},
+    "size": {"field": "friends_count", "type": "quantitative"}
+  }
+}
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://raw.githubusercontent.com/Muhanzhang10/Smile/master/allCrimson.json"},
+
+  "mark": "rect",
+  "width": 300,
+  "height": 200,
+  "encoding": {
+    "x": {
+      "bin": {"maxbins":60},
+      "field": "tweets_count",
+      "type": "quantitative"
+    },
+    "y": {
+      "bin": {"maxbins": 40},
+      "field": "followers_count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "friends_count",
+      "type": "quantitative"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
+
+
+
