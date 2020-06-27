@@ -1,1 +1,13 @@
 #What is the relationship between favorite_count and retweet_count?
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Retweet count to favorite count.",
+  "data": {"url": "https://raw.githubusercontent.com/Muhanzhang10/Smile/master/allCrimson.json"},
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "retweet_count", "type": "quantitative"},
+    "y": {"field": "favorite_count", "type": "quantitative"}
+  }
+}
+
